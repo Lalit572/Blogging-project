@@ -10,7 +10,10 @@
     <h1 class="content"><%= i.title %></h1>
     <p class="content">
       <%= i.content.substring(0,100) + "..." %>
-      <a href="http://localhost:3000/posts/<%= i.title %>">Read more</a>
+      <a href="http://localhost:3000/posts/<%= i._id %>" > Read more</a>
+      <form action="/delete/<%= i._id %>" method="POST">
+        <button type="submit" name="delete" class="btn btn-danger">Delete</button>
+      </form>
     </p>
   <% }); %>
 
